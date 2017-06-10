@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane fx:id="aPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kot.kotsnow.ookEditor.Controller">
+   <children>
+      <MenuBar layoutX="-1.0" layoutY="-2.0" maxWidth="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+              <MenuItem fx:id="open" mnemonicParsing="false" onAction="#open" text="Otwórz" />
+              <MenuItem fx:id="save" mnemonicParsing="false" onAction="#save" text="Zapisz" />
+                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exit" text="Zamknij" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ustawienia">
+               <items>
+                  <Menu mnemonicParsing="false" text="Motyw">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Domyślny">
+                           <graphic>
+                              <RadioButton fx:id="defaultTheme" mnemonicParsing="false" selected="true"  onAction="#setTheme">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="themesGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                           </graphic></MenuItem>
+
+                        <MenuItem mnemonicParsing="false" text="Niebieski">
+                           <graphic>
+                              <RadioButton fx:id="blueTheme" mnemonicParsing="false" toggleGroup="$themesGroup"  onAction="#setTheme" />
+                           </graphic>
+                        </MenuItem>
+
+                        <MenuItem mnemonicParsing="false"  text="Kontrastowy">
+                           <graphic>
+                              <RadioButton fx:id="contrastTheme" mnemonicParsing="false" toggleGroup="$themesGroup"  onAction="#setTheme" />
+                           </graphic>
+                        </MenuItem>
+
+                    </items>
+                  </Menu>
+               </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Pomoc">
+              <items>
+                <MenuItem mnemonicParsing="false" text="O programie" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="14.0" layoutY="30.0" onKeyReleased="#checkText" prefHeight="237.0" prefWidth="585.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+   </children>
+</AnchorPane>
